@@ -1,9 +1,12 @@
+import { BASE_URL } from "../../constants"
+
 const RouterLink = (props) => {
 	const {
 		to,
 		children,
 		...rest
 	} = props
+
 
 	const handleClick = (event) => {
 		event.preventDefault()
@@ -12,7 +15,7 @@ const RouterLink = (props) => {
 	}
 
 	return (
-		<a href={to} onClick={handleClick} {...rest}>
+		<a href={`${BASE_URL}${to}`} onClick={handleClick} {...rest}>
 			{children}
 		</a>
 	)
